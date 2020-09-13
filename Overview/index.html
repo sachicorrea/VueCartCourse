@@ -55,32 +55,7 @@
 
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script> 
 
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-        <script>
-            var app = new Vue({
-                el: '#app',
-                data: {
-                    maximum: 99,
-                    products: null,
-                    cart: []
-                },
-
-                methods: {
-                    addItem: function(product) {
-                        this.cart.push(product);
-                    }
-                },
-
-                mounted: function(){
-                    fetch('https://hplussport.com/api/products/order/price')
-                    .then(response => response.json())
-                    .then(data => {
-                        this.products = data;
-                    })
-                }
-            });
-        </script>
+        <script src="scripts.js"></script>
     </body>
 </html>
 
