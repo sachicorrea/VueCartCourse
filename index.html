@@ -1,0 +1,89 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        
+        <title>Document</title>
+    </head>
+
+    <body class="container mt-4">
+        <div class="container" id="app">
+            <div class="form-inline mr-auto">
+                <label class="font-weight-bold mr-2" for="formMax">max</label>
+                <input type="text" id="formMax" class="form-control w-25" v-model="maximum">
+            </div>
+
+            <input type="range" class="custom-range" min="0" max="200" v-model="maximum">
+            
+            <div class="row d-flex mb-3 align-items-center" 
+                v-for="item in products" 
+                v-if="item.price<=Number(maximum)">
+
+                <div class="col-sm-4">
+                    <img class="img-fluid d-block" :src="item.image" :alt="item.name">
+                </div>
+
+                <div class="col">
+                    <h3 class="text-info">{{ item.name }}</h3>
+                    <p class="mb-0">{{ item.description }}</p>
+                
+                    <div class="h5 float-right">${{item.price}}</div>     
+                </div>
+    
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script> 
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script> 
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+        <script>
+            var data = {
+                maximum: 99,
+                
+                products : [
+                    {
+                    "id": "532",
+                    "name": "Slicker Jacket",
+                    "description": "Wind and rain are no match for our organic bamboo slicker jacket for men and women. Triple stitched seams, zippered pockets, and a stay-tight hood are just a few features of our best-selling jacket.",
+                    "price": "125",
+                    "image_title": "slicker-jacket_lynda_29941",
+                    "image": "https://hplussport.com/wp-content/uploads/2016/12/slicker-jacket_LYNDA_29941.jpg"
+                    },
+                    {
+                    "id": "530",
+                    "name": "Bamboo Thermal Ski Coat",
+                    "description": "You'll be the most environmentally conscious skier on the slopes - and the most stylish - wearing our fitted bamboo thermal ski coat, made from organic bamboo with recycled plastic down filling.",
+                    "price": "99",
+                    "image": "https://hplussport.com/wp-content/uploads/2016/12/ski-coat_LYNDA_29940.jpg"
+                    },
+                    {
+                    "id": "516",
+                    "name": "Unisex Thermal Vest",
+                    "description": "Our thermal vest, made from organic bamboo with recycled plastic down filling, is a favorite of both men and women. You'll help the environment, and have a wear-easy piece for many occasions.",
+                    "price": "95",
+                    "image": "https://hplussport.com/wp-content/uploads/2016/12/unisex-thermal-vest_LYNDA_29944.jpg"
+                    }
+                ]
+            }
+
+            var app = new Vue({
+                el: '#app',
+                data: data
+            });
+        </script>
+    </body>
+</html>
+
+
+
+   
+  
