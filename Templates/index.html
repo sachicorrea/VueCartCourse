@@ -36,16 +36,16 @@
 
        <!-- Binding attributes with v-bind -->
        <!-- Object notation used for js -->
-       <img
+       <!--<img
             
             v-bind="{
                 class: imgClass + ' ' + 'w-25',
                 src : products[0].image,
                 alt : products[0].name
-            }">
+            }"> -->
        
         <!-- HTML notation used for simple variables -->
-        <img
+        <!-- <img
             :class="imgClass + ' ' + 'w-25'"
             :src="products[1].image"
             :alt="products[1].name">
@@ -53,8 +53,22 @@
         <img
             :class="imgClass + ' ' + 'w-25'"
             :src="products[2].image"
-            :alt="products[2].name">
+            :alt="products[2].name">-->
 
+        <!-- Using computed properties -->
+
+        <h3>Slugetize</h3>
+        <input class="form-control" type="text" v-model="slugText">
+
+        <div class="font-weight-bold text-danger">{{
+            slugText
+            .toLowerCase()
+            .replace(/[^\w ]+/g, '')
+            .replace(/ +/g, '-')
+        }}</div>
+
+        </div>
+        
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script> 

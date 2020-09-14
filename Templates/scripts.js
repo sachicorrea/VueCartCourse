@@ -1,3 +1,5 @@
+/* Template interpolations */
+
 /*var app = new Vue({
     el: '#app',
     data: {
@@ -7,7 +9,7 @@
 
 /* Binding attributes with v-bind */
 
-var data = {
+/*var data = {
     imgClass: 'img-fluid',
     
     products : [
@@ -40,4 +42,22 @@ var data = {
     el: '#app',
     data: data
    });
+   */
+
+/* Using computed properties */
+var app = new Vue({
+    el: '#app',
+    data: {
+        slugText: 'The Quick #&#&$^ Brown 29'
+    },
+    computed: {
+        slugetize: function() {
+            return this.slugText
+            .toLowerCase()
+            .replace(/[^\w ]+/g, '')
+            .replace(/ +/g, '-')
+        }
+    }
+});
+
    
